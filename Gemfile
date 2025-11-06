@@ -51,10 +51,17 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem "rspec-rails", "~> 8.0.0"
+  gem "pry-byebug", "~> 3.11"
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "html2haml", "~> 2.3"
 end
-gem "rspec-rails", group: [:development, :test]
+
+
+gem "haml", "~> 6.3"
+
+gem "haml-rails", "~> 3.0"
