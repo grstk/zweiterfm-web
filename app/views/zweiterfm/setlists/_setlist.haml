@@ -1,0 +1,12 @@
+.col-lg-4
+  .card.m-3
+    .card-header
+      .h5.card-title
+        = setlist.date
+      .h6.card-subtitle.mb-2.text-body-secondary
+        = setlist.city
+    .card-body
+      %ol
+        - setlist.songs.each do |song|
+          %li
+            = song
