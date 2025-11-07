@@ -1,0 +1,12 @@
+.col-lg-4
+  .card.m-3
+    .card-header
+    .card-body
+      %ol
+        - album.tracks.each do |track|
+          - if @songs.include?(track)
+            %li.text-decoration-line-through.text-danger
+              = track
+          - else
+            %li
+              = track

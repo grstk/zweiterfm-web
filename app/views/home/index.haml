@@ -9,21 +9,31 @@
 .zfm-divider
 .container
   %p.d-inline-flex.gap-1
+  %button.btn.btn-dark.my-2{"aria-controls" => "collapseAlbums", "aria-expanded" => "false", "data-bs-target" => "#collapseAlbums", "data-bs-toggle" => "collapse", :type => "button"}
+    Albums
+  #collapseAlbums.collapse
+    .row
+      = render @albums
+
+.zfm-divider
+.container
+  %p.d-inline-flex.gap-1
   %button.btn.btn-dark.my-2{"aria-controls" => "collapseSetlists", "aria-expanded" => "false", "data-bs-target" => "#collapseSetlists", "data-bs-toggle" => "collapse", :type => "button"}
     Setlists
-#collapseSetlists.collapse
-  .row
-    = render @setlists
+  #collapseSetlists.collapse
+    .row
+      = render @setlists
 
 .zfm-divider
 .container
   %p.d-inline-flex.gap-1
   %button.btn.btn-dark.my-2{"aria-controls" => "collapsePlaylist", "aria-expanded" => "false", "data-bs-target" => "#collapsePlaylist", "data-bs-toggle" => "collapse", :type => "button"}
     Playlist
-#collapsePlaylist.collapse
-  .row
-    .p-5.text-center.rounded-3
-      = button_to '#', class: "btn btn-dark px-5 my-5", type: "button" do
-        Log in to spotify
+  #collapsePlaylist.collapse
+    .row
+      .p-5.text-center.rounded-3
+        = button_to '#', class: "btn btn-dark px-5 my-5", type: "button" do
+          Log in to spotify
 .zfm-divider
+
 

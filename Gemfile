@@ -66,3 +66,7 @@ gem "haml", "~> 6.3"
 gem "haml-rails", "~> 3.0"
 
 gem "setlistfm", "~> 0.1.1"
+
+gem "musicbrainz", "~> 0.8.0"
+
+gem "coverart", "~> 0.0.4"
