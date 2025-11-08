@@ -20,6 +20,7 @@ Bundler.require(*Rails.groups)
 
 module Zweiterfm
   class Application < Rails::Application
+    RSpotify::authenticate(Rails.application.credentials.spotify.client_id, Rails.application.credentials.spotify.client_secret)
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.0
 

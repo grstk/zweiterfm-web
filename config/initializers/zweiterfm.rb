@@ -88,7 +88,7 @@ HAIL_TO_THE_THIEF = {
   cover_url: "http://archive.org/download/mbid-934715c7-5b48-43a0-a734-85322289ca6d/mbid-934715c7-5b48-43a0-a734-85322289ca6d-24700986063.jpg",
   mbid: "934715c7-5b48-43a0-a734-85322289ca6d",
   tracks: ["2 + 2 = 5",
-      "Sit Down. Stand Up",
+      "Sit Down. Stand Up.",
       "Sail to the Moon",
       "Backdrifts",
       "Go to Sleep",

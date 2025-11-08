@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source "https://gem.coop"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.3"
@@ -70,3 +70,7 @@ gem "setlistfm", "~> 0.1.1"
 gem "musicbrainz", "~> 0.8.0"
 
 gem "coverart", "~> 0.0.4"
+
+gem "rspotify", "~> 2.12"
+
+gem "omniauth-rails_csrf_protection", "~> 1.0"
