@@ -1,6 +1,6 @@
 .col-lg-4
   .card.m-3
-    .card-header
+    = image_tag album.cover_url, class: "card-img-top" if album.cover_url.present?
     .card-body
       %ol
         - album.tracks.each do |track|

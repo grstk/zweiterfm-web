@@ -3,11 +3,13 @@ module Zweiterfm
     attr_reader :albums
 
     def initialize
-      @coverart_client = CoverArt::Client.new
+      # @coverart_client = CoverArt::Client.new
 
-      @albums = releases.map do |release|
-        Zweiterfm::Album.new(tracks(release), cover_url(release))
-      end
+      # @albums = releases.map do |release|
+      #   Zweiterfm::Album.new(tracks(release), cover_url(release))
+      # end
+
+      @albums = RADIOHEAD_DISCOGRAPHY.map { |release| Zweiterfm::Album.new(release[:tracks], release[:cover_url])}
     end
 
     private
