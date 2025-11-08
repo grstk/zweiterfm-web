@@ -1,20 +1,3 @@
-.container
-  %p.d-inline-flex.gap-1
-  %button.btn.btn-dark.my-2{"aria-controls" => "collapseSongs", "aria-expanded" => "false", "data-bs-target" => "#collapseSongs", "data-bs-toggle" => "collapse", :type => "button"}
-    Songs
-  #collapseSongs.collapse
-    %p.col-lg-8.mx-auto.lead
-      = @songs
-
-.zfm-divider
-.container
-  %p.d-inline-flex.gap-1
-  %button.btn.btn-dark.my-2{"aria-controls" => "collapseAlbums", "aria-expanded" => "false", "data-bs-target" => "#collapseAlbums", "data-bs-toggle" => "collapse", :type => "button"}
-    Albums
-  #collapseAlbums.collapse
-    .row
-      = render @albums
-
 .zfm-divider
 .container
   %p.d-inline-flex.gap-1
@@ -23,17 +6,41 @@
   #collapseSetlists.collapse
     .row
       = render @setlists
-
 .zfm-divider
+
 .container
   %p.d-inline-flex.gap-1
-  %button.btn.btn-dark.my-2{"aria-controls" => "collapsePlaylist", "aria-expanded" => "false", "data-bs-target" => "#collapsePlaylist", "data-bs-toggle" => "collapse", :type => "button"}
-    Playlist
-  #collapsePlaylist.collapse
+  %button.btn.btn-dark.my-2{"aria-controls" => "collapseAlbums", "aria-expanded" => "false", "data-bs-target" => "#collapseAlbums", "data-bs-toggle" => "collapse", :type => "button"}
+    Albums
+  #collapseAlbums.collapse
     .row
-      .p-5.text-center.rounded-3
-        = button_to '#', class: "btn btn-dark px-5 my-5", type: "button" do
-          Log in to spotify
+      = render @albums
 .zfm-divider
 
+.container
+  %p.d-inline-flex.gap-1
+  %button.btn.btn-dark.my-2{"aria-controls" => "collapseSongs", "aria-expanded" => "false", "data-bs-target" => "#collapseSongs", "data-bs-toggle" => "collapse", :type => "button"}
+    Songs
+  #collapseSongs.collapse
+    %p.col-lg-8.mx-auto.lead
+      = @songs
+    .row
+      .col-5
+        = button_to "Save as a spotify playlist", "#", playlist_button_attributes
+      .col-5
+        = button_to "Log in to spotify", "/auth/spotify", data: { turbo: false }, class: "btn btn-dark px-5 my-5", type: "button"
+.zfm-divider
 
+/ .container
+/   %p.d-inline-flex.gap-1
+/   %button.btn.btn-dark.my-2{"aria-controls" => "collapsePlaylist", "aria-expanded" => "false", "data-bs-target" => "#collapsePlaylist", "data-bs-toggle" => "collapse", :type => "button"}
+/     Playlist
+/   #collapsePlaylist.collapse
+/     .row
+/         - @tracks.each do |track|
+/           %div
+/             = track.name
+
+
+/     .p-5.text-center.rounded-3
+/
