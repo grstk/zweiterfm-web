@@ -11,13 +11,6 @@ class HomeController < ApplicationController
 
   private
 
-  def set_user
-    @spotify_user = nil
-    return unless session[:spotify_user].present?
-
-    @spotify_user = RSpotify::User.new(session[:spotify_user])
-  end
-
   def set_tour
     @tour = Zweiterfm::Tour.new
   end
