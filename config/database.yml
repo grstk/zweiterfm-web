@@ -83,7 +83,8 @@ production:
     <<: *default
     database: zweiterfm_production
     username: zweiterfm
-    password: <%= ENV["ZWEITERFM_DATABASE_PASSWORD"] %>
+    password: <%= Rails.application.credentials.google[:db_password] %>
+    host: /cloudsql/zweiterfm:europe-west2:zweiterfm
   cache:
     <<: *primary_production
     database: zweiterfm_production_cache

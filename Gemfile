@@ -74,3 +74,5 @@ gem "coverart", "~> 0.0.4"
 gem "rspotify", "~> 2.12"
 
 gem "omniauth-rails_csrf_protection", "~> 1.0"
+
+gem "google-cloud-storage", "~> 1.57"
