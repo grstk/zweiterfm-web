@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  get "auth/spotify/callback", to: "home#index"
+  get "auth/spotify/callback", to: "session#authenticate"
 
   root "home#index"
 end

@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
+  before_action :set_user
   before_action :set_tour
   before_action :set_discography
-  before_action :set_user
 
   def index
     @setlists = @tour.setlists
@@ -13,9 +13,9 @@ class HomeController < ApplicationController
 
   def set_user
     @spotify_user = nil
-    return unless request.env['omniauth.auth'].present?
+    return unless session[:spotify_user].present?
 
-    @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+    @spotify_user = RSpotify::User.new(session[:spotify_user])
   end
 
   def set_tour
