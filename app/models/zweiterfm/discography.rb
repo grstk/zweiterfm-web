@@ -3,6 +3,8 @@ module Zweiterfm
     attr_reader :albums
 
     def initialize
+      @coverart_client = CoverArt::Client.new
+
       @albums = releases.map do |release|
         Zweiterfm::Album.new(tracks(release), cover_url(release))
       end
@@ -20,7 +22,6 @@ module Zweiterfm
     def releases
       @releases ||=
         release_groups.map do |release_group|
-          # sleep 1
           select_release(release_group)
         end
     end
@@ -32,6 +33,7 @@ module Zweiterfm
     end
 
     def cover_url(release)
+      @coverart_client.front(release.id)
     end
 
     def tracks(release)
