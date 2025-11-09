@@ -1,8 +1,9 @@
 .row
   .col-12
-    .m-3.text-center
-      - @albums.each do |album|
-        %span{class: "zfm-text-#{album.color} px-1" }
-          = album.title
-      %span
-        Other
+    .card.m-3.text-center
+      .card-body
+        - @albums.each do |album|
+          %span{class: "zfm-text-#{album.color} px-0.5" }
+            = album.title
+        %span
+          Other
