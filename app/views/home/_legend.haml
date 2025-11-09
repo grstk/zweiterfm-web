@@ -7,3 +7,7 @@
             = album.title
         %span
           Other
+        - if locals[:show_not_yet_seen]
+          %br
+          %span.bg-black
+            not-yet-seen-live

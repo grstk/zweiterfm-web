@@ -1,13 +1,12 @@
 module Zweiterfm
-  class Tour
+  class PastGigs
     attr_reader :setlists
     attr_reader :songs
 
-    def initialize(method_name = :artist_setlists, method_argument = RADIOHEAD_MBID)
+    def initialize(user)
+      sleep 1
       @client = Setlistfm.new(Rails.application.credentials.setlistfm_api_key)
-      response = @client.public_send(method_name, method_argument)
-
-      @setlists = parse_response_body(response.body)
+      @setlists = parse_response_body(@client.user_attended(user).body)
       @songs = @setlists.map(&:songs).flatten.uniq
     end
 
@@ -15,7 +14,7 @@ module Zweiterfm
 
     def parse_response_body(body)
       gigs = body.setlist.reverse.select do |setlist|
-        Date.parse(setlist.eventDate).after? Date.parse(TOUR_START) - 1
+        setlist.artist["mbid"] == RADIOHEAD_MBID
       end
 
       gigs.map do |gig|

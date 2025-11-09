@@ -2,13 +2,27 @@
 .container
   %p.d-inline-flex.gap-1
   %button.btn.btn-dark.my-2{"aria-controls" => "collapseSetlists", "aria-expanded" => "false", "data-bs-target" => "#collapseSetlists", "data-bs-toggle" => "collapse", :type => "button"}
-    Setlists
+    - if @past_setlists.present?
+      2025 Setlists
+    - else
+      Setlists
+
   #collapseSetlists.collapse
-    = render "legend"
+    = render "legend", locals: { show_not_yet_seen: @past_setlists.present? }
     .row
       = render @setlists
-
 .zfm-divider
+
+-if @past_setlists.present?
+  .container
+    %p.d-inline-flex.gap-1
+    %button.btn.btn-dark.my-2{"aria-controls" => "collapsePastSetlists", "aria-expanded" => "false", "data-bs-target" => "#collapsePastSetlists", "data-bs-toggle" => "collapse", :type => "button"}
+      Past Setlists
+    #collapsePastSetlists.collapse
+      = render "legend", locals: { show_not_yet_seen: false }
+      .row
+        = render @past_setlists
+  .zfm-divider
 
 .container
   %p.d-inline-flex.gap-1

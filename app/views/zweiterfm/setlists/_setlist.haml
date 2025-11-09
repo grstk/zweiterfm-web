@@ -8,6 +8,6 @@
     .card-body
       %ol
         - setlist.songs.each do |song|
-          %li{ class: song_class(song) }
+          %li{ class: song_classes(song) }
             = song
 

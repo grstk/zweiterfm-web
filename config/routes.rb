@@ -15,5 +15,7 @@ Rails.application.routes.draw do
 
   post "/spotify", to: "spotify#create_playlist"
 
+  get "(/:setlistfm_user_name)", to: "home#index"
+
   root "home#index"
 end

@@ -11,10 +11,14 @@ module HomeHelper
     attributes
   end
 
-  def song_class(song)
+  def song_classes(song)
+    classes = []
     album = @albums.select { |a| a.tracks.include?(song) }.first
-    return "text-light" if album.nil?
+    album.present? ? classes << "zfm-text-#{album.color}" : classes << "text-light"
+    return classes.join(" ") unless @past_songs.present?
+    return classes.join(" ") if @past_songs.include?(song)
 
-    "zfm-text-#{album.color}"
+    classes << "bg-black"
+    classes.join(" ")
   end
 end

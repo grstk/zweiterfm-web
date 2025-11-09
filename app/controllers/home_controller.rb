@@ -7,6 +7,11 @@ class HomeController < ApplicationController
     @setlists = @tour.setlists
     @songs = @tour.songs
     @albums = @discography.albums
+    return unless params[:setlistfm_user_name]
+
+    past_gigs = Zweiterfm::PastGigs.new(params[:setlistfm_user_name])
+    @past_setlists = past_gigs.setlists
+    @past_songs = past_gigs.songs
   end
 
   private

@@ -11,11 +11,19 @@
                 = "%02d." % (index + 1)
               %td.py-0
                 = track
+              - if @past_setlists.present?
+                - @past_setlists.each do |setlist|
+                  - if setlist.songs.include?(track)
+                    %td.px-0.py-0{ class: "zfm-text-#{album.color}" }
+                      &#x2592
+                  - else
+                    %td.text-black.px-0.py-0
+                      &#x2592
               - @setlists.each do |setlist|
                 - if setlist.songs.include?(track)
                   %td.px-0.py-0{ class: "zfm-text-#{album.color}" }
-                    &#x2587
+                    &#x2588
                 - else
                   %td.text-black.px-0.py-0
-                    &#x2587
+                    &#x2588
 
