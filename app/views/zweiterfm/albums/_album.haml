@@ -1,12 +1,19 @@
 .col-lg-4
   .card.m-3
     = image_tag album.cover_url, class: "card-img-top" if album.cover_url.present?
-    .card-body
-      %ol
-        - album.tracks.each do |track|
-          - if @songs.include?(track)
-            %li.text-decoration-line-through.text-danger
+    %table.table.table-borderless
+      %tbody
+        - album.tracks.each_with_index do |track, index|
+          %tr
+            %td.py-0
+              = "%02d." % (index + 1)
+            %td.py-0
               = track
-          - else
-            %li
-              = track
+            - @setlists.each do |setlist|
+              - if setlist.songs.include?(track)
+                %td.text-success.px-0.py-0
+                  &#x2587
+              - else
+                %td.text-black.px-0.py-0
+                  &#x2587
+
