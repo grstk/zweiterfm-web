@@ -1,10 +1,9 @@
 module HomeHelper
-  def playlist_button_attributes
-    classes = %w[ btn btn-dark text-success px-5 my-5 ]
-    classes << "text-decoration-line-through" unless spotify_user_authenticated?
+  def spotify_button_attributes
+    classes = %w[ btn bg-black px-5 my-5 ]
 
     attributes = Hash.new
-    attributes[:params] = { songs: @songs }
+    attributes[:params] = { songs: @songs } if spotify_user_authenticated?
     attributes[:class] = classes.join(" ")
     attributes[:type] =  "button"
     attributes[:data] = { turbo: false }
@@ -12,7 +11,7 @@ module HomeHelper
   end
 
   def song_classes(song)
-    classes = []
+    classes = %w[ zfm-word-break-all ]
     album = @albums.select { |a| a.tracks.include?(song) }.first
     album.present? ? classes << "zfm-text-#{album.color}" : classes << "text-light"
     return classes.join(" ") unless @past_songs.present?

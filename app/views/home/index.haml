@@ -40,9 +40,10 @@
   #collapseSongs.collapse
     = render partial: "songs"
 
-    - if spotify_user_authenticated?
-      = button_to "Save as a spotify playlist", "/spotify", playlist_button_attributes
-    - else
-      = button_to "Log in to spotify", "/auth/spotify", data: { turbo: false }, class: "btn btn-dark text-success px-5 my-5", type: "button"
+    .text-center
+      - if spotify_user_authenticated?
+        = button_to "Save as a spotify playlist", "/spotify", spotify_button_attributes
+      - else
+        = button_to "Log in to spotify", "/auth/spotify", spotify_button_attributes
 .zfm-divider
 
