@@ -3,6 +3,7 @@ RADIOHEAD_SPOTIFY_ID = "4Z8W4fKeB5YxbusRsdQVPb".freeze
 TOUR_START = "2025-11-04".freeze
 
 PABLO_HONEY = {
+  title: "Pablo Honey",
   cover_url: "http://archive.org/download/mbid-8125fd6f-addc-45a8-ba34-4b023aeae962/mbid-8125fd6f-addc-45a8-ba34-4b023aeae962-32282694066.jpg",
   mbid: "8125fd6f-addc-45a8-ba34-4b023aeae962",
   color: "indigo",
@@ -21,6 +22,7 @@ PABLO_HONEY = {
 }.freeze
 
 THE_BENDS = {
+  title: "The Bends",
   cover_url: "http://archive.org/download/mbid-eca1307e-affa-4900-99a0-bf37659543ba/mbid-eca1307e-affa-4900-99a0-bf37659543ba-1632984516.jpg",
   mbid: "eca1307e-affa-4900-99a0-bf37659543ba",
   color: "purple",
@@ -39,9 +41,10 @@ THE_BENDS = {
 }.freeze
 
 OK_COMPUTER = {
+  title: "OK Computer",
   cover_url: "http://archive.org/download/mbid-c7569949-0f67-4682-a0d8-75c4290c52dc/mbid-c7569949-0f67-4682-a0d8-75c4290c52dc-29883313202.jpg",
   mbid: "c7569949-0f67-4682-a0d8-75c4290c52dc",
-  color: "cyan",
+  color: "blue",
   tracks: ["Airbag",
       "Paranoid Android",
       "Subterranean Homesick Alien",
@@ -57,9 +60,10 @@ OK_COMPUTER = {
 }.freeze
 
 KID_A = {
+  title: "Kid A",
   cover_url: "http://archive.org/download/mbid-f947caf6-2da7-3a57-aa4b-0d5e374226ce/mbid-f947caf6-2da7-3a57-aa4b-0d5e374226ce-10430264283.jpg",
   mbid: "f947caf6-2da7-3a57-aa4b-0d5e374226ce",
-  color: "red",
+  color: "green",
   tracks: ["Everything in Its Right Place",
       "Kid A",
       "The National Anthem",
@@ -73,9 +77,10 @@ KID_A = {
 }.freeze
 
 AMNESIAC = {
+  title: "Amnesiac",
   cover_url: "http://archive.org/download/mbid-576b18ac-3e8b-4838-85ff-497cd3f62f3d/mbid-576b18ac-3e8b-4838-85ff-497cd3f62f3d-23638998784.png",
   mbid: "6853e107-8ce1-4274-b30b-ff1023a49409",
-  color: "blue",
+  color: "teal",
   tracks: ["Packt Like Sardines in a Crushd Tin Box",
       "Pyramid Song",
       "Pulk/Pull Revolving Doors",
@@ -90,9 +95,10 @@ AMNESIAC = {
 }.freeze
 
 HAIL_TO_THE_THIEF = {
+  title: "Hail to the thief",
   cover_url: "http://archive.org/download/mbid-934715c7-5b48-43a0-a734-85322289ca6d/mbid-934715c7-5b48-43a0-a734-85322289ca6d-24700986063.jpg",
   mbid: "934715c7-5b48-43a0-a734-85322289ca6d",
-  color: "pink",
+  color: "yellow",
   tracks: ["2 + 2 = 5",
       "Sit Down. Stand Up.",
       "Sail to the Moon",
@@ -110,9 +116,10 @@ HAIL_TO_THE_THIEF = {
 }.freeze
 
 IN_RAINBOWS = {
+  title: "In Rainbows",
   cover_url: "http://archive.org/download/mbid-d4e08a8b-375d-474d-b960-9aaad7c04d30/mbid-d4e08a8b-375d-474d-b960-9aaad7c04d30-6689244510.jpg",
   mbid: "d4e08a8b-375d-474d-b960-9aaad7c04d30",
-  color: "green",
+  color: "orange",
   tracks: ["15 Step",
       "Bodysnatchers",
       "Nude",
@@ -126,9 +133,10 @@ IN_RAINBOWS = {
 }.freeze
 
 THE_KING_OF_LIMBS = {
+  title: "The King of Limbs",
   cover_url: "http://archive.org/download/mbid-15dc9592-88d2-42d6-b7f3-40e07ec68ff0/mbid-15dc9592-88d2-42d6-b7f3-40e07ec68ff0-2515589570.jpg",
   mbid: "15dc9592-88d2-42d6-b7f3-40e07ec68ff0",
-  color: "orange",
+  color: "red",
   tracks: ["Bloom",
       "Morning Mr Magpie",
       "Little by Little",
@@ -140,9 +148,10 @@ THE_KING_OF_LIMBS = {
 }.freeze
 
 A_MOON_SHAPED_POOL = {
+  title: "A Moon Shaped Pool",
   cover_url: "http://archive.org/download/mbid-5f81ffe8-fd6c-409e-9441-6a978270d9fd/mbid-5f81ffe8-fd6c-409e-9441-6a978270d9fd-13521174881.jpg",
   mbid: "5f81ffe8-fd6c-409e-9441-6a978270d9fd",
-  color: "yellow",
+  color: "pink",
   tracks: ["Burn the Witch",
       "Daydreaming",
       "Decks Dark",

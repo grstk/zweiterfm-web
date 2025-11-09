@@ -4,8 +4,10 @@
   %button.btn.btn-dark.my-2{"aria-controls" => "collapseSetlists", "aria-expanded" => "false", "data-bs-target" => "#collapseSetlists", "data-bs-toggle" => "collapse", :type => "button"}
     Setlists
   #collapseSetlists.collapse
+    = render "legend"
     .row
       = render @setlists
+
 .zfm-divider
 
 .container

@@ -9,7 +9,9 @@ module Zweiterfm
       #   Zweiterfm::Album.new(tracks(release), cover_url(release))
       # end
 
-      @albums = RADIOHEAD_DISCOGRAPHY.map { |r| Zweiterfm::Album.new(r[:tracks], r[:cover_url], r[:color])}
+      @albums = RADIOHEAD_DISCOGRAPHY.map do |album|
+        Zweiterfm::Album.new(album)
+      end
     end
 
     private
