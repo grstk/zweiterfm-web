@@ -62,7 +62,7 @@ group :development do
 end
 
 
-gem "haml", "~> 6.3"
+gem "haml", "~> 7.0"
 gem "haml-rails", "~> 3.0"
 
 gem "setlistfm", "~> 0.1.1"
