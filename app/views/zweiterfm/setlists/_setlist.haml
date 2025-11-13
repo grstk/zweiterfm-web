@@ -6,7 +6,7 @@
       .h6.card-subtitle.mb-2.text-body-secondary
         = setlist.city
     .card-body
-      %ol
+      %ol.zfm-list
         - setlist.songs.each do |song|
           %li{ class: song_classes(song) }
             = song

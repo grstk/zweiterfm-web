@@ -27,6 +27,10 @@ button[type=submit]:hover{
   box-shadow: inset 0 .5em 1.5em #0000001a,inset 0 .125em .5em #00000026
 }
 
+.zfm-list{
+  list-style-type: decimal-leading-zero;
+}
+
 .zfm-word-break-all {
   word-break: break-all;
 }

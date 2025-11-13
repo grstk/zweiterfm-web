@@ -20,10 +20,11 @@
                     %td.text-black.px-0.py-0
                       &#x2592
               - @setlists.each do |setlist|
-                - if setlist.songs.include?(track)
-                  %td.px-0.py-0{ class: "zfm-text-#{album.color}" }
-                    &#x2588
-                - else
-                  %td.text-black.px-0.py-0
-                    &#x2588
+                - unless setlist.songs.empty?
+                  - if setlist.songs.include?(track)
+                    %td.px-0.py-0{ class: "zfm-text-#{album.color}" }
+                      &#x2588
+                  - else
+                    %td.px-0.py-0.text-black
+                      &#x2588
 
