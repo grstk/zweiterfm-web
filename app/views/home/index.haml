@@ -1,6 +1,16 @@
 .zfm-divider
 .container
   %p.d-inline-flex.gap-1
+  %button.btn.btn-dark.my-2{"aria-controls" => "collapseSongs", "aria-expanded" => "false", "data-bs-target" => "#collapseSongs", "data-bs-toggle" => "collapse", :type => "button"}
+    Songs
+  #collapseSongs.collapse
+    .row
+      = render partial: "selected_songs"
+
+.zfm-divider
+
+.container
+  %p.d-inline-flex.gap-1
   %button.btn.btn-dark.my-2{"aria-controls" => "collapseSetlists", "aria-expanded" => "false", "data-bs-target" => "#collapseSetlists", "data-bs-toggle" => "collapse", :type => "button"}
     - if @past_setlists.present?
       2025 Setlists
@@ -33,17 +43,10 @@
       = render @albums
 .zfm-divider
 
-.container
-  %p.d-inline-flex.gap-1
-  %button.btn.btn-dark.my-2{"aria-controls" => "collapseSongs", "aria-expanded" => "false", "data-bs-target" => "#collapseSongs", "data-bs-toggle" => "collapse", :type => "button"}
-    Songs
-  #collapseSongs.collapse
-    = render partial: "songs"
+/ .container
+/   %p.d-inline-flex.gap-1
 
-    .text-center
-      - if spotify_user_authenticated?
-        = button_to "Save as a spotify playlist", "/spotify", spotify_button_attributes
-      - else
-        = button_to "Log in to spotify", "/auth/spotify", spotify_button_attributes
-.zfm-divider
+/     = render partial: "songs"
+/     = render partial: "spotify"
+/ .zfm-divider
 

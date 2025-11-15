@@ -11,6 +11,16 @@ module Zweiterfm
       @songs = @setlists.map(&:songs).flatten.uniq
     end
 
+    def flat_setlists
+      # setlists = @setlists.select do |setlist|
+      #   setlist.songs.any?
+      # end
+
+      @setlists.map do |setlist|
+        [setlist.date, setlist.songs]
+      end.flatten
+    end
+
     private
 
     def parse_response_body(body)

@@ -1,0 +1,9 @@
+%p.p-0.lead.justify-content-between
+  - @tour.flat_setlists.each do |song_or_date|
+    - if @tour.songs.include?(song_or_date)
+      %span{ class: song_classes(song_or_date) }
+        = song_or_date
+    - else
+      %span.zfm-word-break-all.text-light
+        = song_or_date
+= render partial: "spotify"

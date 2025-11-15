@@ -5,7 +5,7 @@
         - @albums.each do |album|
           %span{class: "zfm-text-#{album.color} px-0.5" }
             = album.title
-        %span
+        %span.zfm-text-gray
           Other
         - if locals[:show_not_yet_seen]
           %br

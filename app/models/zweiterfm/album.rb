@@ -13,5 +13,9 @@ module Zweiterfm
       @cover_url = options[:cover_url]
       @color = options[:color]
     end
+
+    def selected_tracks(songs)
+      tracks & songs
+    end
   end
 end
