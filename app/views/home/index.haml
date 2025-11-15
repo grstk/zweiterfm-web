@@ -4,6 +4,7 @@
   %button.btn.btn-dark.my-2{"aria-controls" => "collapseSongs", "aria-expanded" => "false", "data-bs-target" => "#collapseSongs", "data-bs-toggle" => "collapse", :type => "button"}
     Songs
   #collapseSongs.collapse
+    = render partial: "legend", locals: { show_not_yet_seen: @past_songs.present? }
     .row
       = render partial: "selected_songs"
 
