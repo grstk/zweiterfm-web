@@ -7,11 +7,13 @@ class HomeController < ApplicationController
     @setlists = @tour.setlists
     @songs = @tour.songs
     @albums = @discography.albums
-    return unless params[:setlistfm_user_name]
+    if params[:setlistfm_user_name]
+      past_gigs = Zweiterfm::PastGigs.new(params[:setlistfm_user_name])
+      @past_setlists = past_gigs.setlists
+      @past_songs = past_gigs.songs
+    end
 
-    past_gigs = Zweiterfm::PastGigs.new(params[:setlistfm_user_name])
-    @past_setlists = past_gigs.setlists
-    @past_songs = past_gigs.songs
+    add_other_album
   end
 
   private
@@ -22,5 +24,13 @@ class HomeController < ApplicationController
 
   def set_discography
     @discography = Zweiterfm::Discography.new
+  end
+
+  def add_other_album
+    live_songs = @songs.union(@past_songs || [])
+    others = live_songs - @discography.tracks
+    return if others.empty?
+
+    @albums << Zweiterfm::Album.new(title: "Other", tracks: others, color: "gray")
   end
 end

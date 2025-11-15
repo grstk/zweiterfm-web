@@ -13,7 +13,7 @@ module HomeHelper
   def song_classes(song)
     classes = %w[ zfm-word-break-all ]
     album = @albums.select { |a| a.tracks.include?(song) }.first
-    album.present? ? classes << "zfm-text-#{album.color}" : classes << "zfm-text-gray"
+    classes << "zfm-text-#{album.color}"
     return classes.join(" ") unless @past_songs.present?
     return classes.join(" ") if @past_songs.include?(song)
 

@@ -8,7 +8,8 @@
           - album.tracks.each_with_index do |track, index|
             %tr
               %td.py-0
-                = "%02d." % (index + 1)
+                - unless album.title == "Other"
+                  = "%02d." % (index + 1)
               %td.py-0
                 = track
               - if @past_setlists.present?
