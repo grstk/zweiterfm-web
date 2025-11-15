@@ -10,5 +10,12 @@ module Zweiterfm
 
       @tracks = albums.map(&:tracks).flatten
     end
+
+    def selected_tracks(songs)
+      albums.map do |album|
+        album.selected_tracks(songs)
+      end
+      .flatten
+    end
   end
 end

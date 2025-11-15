@@ -4,7 +4,7 @@
   %button.btn.btn-dark.my-2{"aria-controls" => "collapseSongs", "aria-expanded" => "false", "data-bs-target" => "#collapseSongs", "data-bs-toggle" => "collapse", :type => "button"}
     Songs
   #collapseSongs.collapse
-    = render partial: "legend", locals: { show_not_yet_seen: @past_songs.present? }
+    = render partial: "legend", locals: { show_not_yet_seen: false }
     .row
       = render partial: "selected_songs"
 
@@ -19,7 +19,7 @@
       Setlists
 
   #collapseSetlists.collapse
-    = render "legend", locals: { show_not_yet_seen: @past_setlists.present? }
+    = render partial: "legend", locals: { show_not_yet_seen: @past_setlists.present? }
     .row
       = render @setlists
 .zfm-divider
@@ -30,7 +30,7 @@
     %button.btn.btn-dark.my-2{"aria-controls" => "collapsePastSetlists", "aria-expanded" => "false", "data-bs-target" => "#collapsePastSetlists", "data-bs-toggle" => "collapse", :type => "button"}
       Past Setlists
     #collapsePastSetlists.collapse
-      = render "legend", locals: { show_not_yet_seen: false }
+      = render partial: "legend", locals: { show_not_yet_seen: false }
       .row
         = render @past_setlists
   .zfm-divider
@@ -44,10 +44,12 @@
       = render @albums
 .zfm-divider
 
-/ .container
-/   %p.d-inline-flex.gap-1
-
-/     = render partial: "songs"
-/     = render partial: "spotify"
-/ .zfm-divider
+.container
+  %p.d-inline-flex.gap-1
+  %button.btn.btn-dark.my-2{"aria-controls" => "collapsePlaylist", "aria-expanded" => "false", "data-bs-target" => "#collapsePlaylist", "data-bs-toggle" => "collapse", :type => "button"}
+    Playlist
+  #collapsePlaylist.collapse
+    = render partial: "playlist"
+    = render partial: "spotify"
+.zfm-divider
 

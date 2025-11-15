@@ -6,14 +6,16 @@ class HomeController < ApplicationController
   def index
     @setlists = @tour.setlists
     @songs = @tour.songs
-    @albums = @discography.albums
+
     if params[:setlistfm_user_name]
       past_gigs = Zweiterfm::PastGigs.new(params[:setlistfm_user_name])
       @past_setlists = past_gigs.setlists
       @past_songs = past_gigs.songs
     end
 
+    @all_songs = @songs + (@past_songs || [])
     add_other_album
+    @albums = @discography.albums
   end
 
   private
@@ -31,6 +33,6 @@ class HomeController < ApplicationController
     others = live_songs - @discography.tracks
     return if others.empty?
 
-    @albums << Zweiterfm::Album.new(title: "Other", tracks: others, color: "gray")
+    @discography.albums << Zweiterfm::Album.new(title: "Other", tracks: others, color: "gray")
   end
 end

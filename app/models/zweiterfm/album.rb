@@ -15,7 +15,9 @@ module Zweiterfm
     end
 
     def selected_tracks(songs)
-      tracks & songs
+      (tracks & songs).map do |track|
+        { title: track, color: color}
+      end
     end
   end
 end

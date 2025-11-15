@@ -1,30 +1,25 @@
-.col-lg-4
-  .m-3
-    %table.table.table-borderless.px-3
-      %tbody
-        - @albums.each do |album|
-          - album.selected_tracks(@songs).each do |track|
+- @discography.selected_tracks(@all_songs).in_groups(3, false) do |tracks|
+  .col-lg-4
+    .m-3
+      %table.table.table-borderless.px-3
+        %tbody
+          - tracks.each do |track|
             %tr
-              %td.py-0{ class: "zfm-text-#{album.color}"}
-                = track
+              %td.py-0{ class: "zfm-text-#{track[:color]}"}
+                = track[:title]
               - if @past_setlists.present?
                 - @past_setlists.each do |setlist|
-                  - if setlist.songs.include?(track)
-                    %td.px-0.py-0{ class: "zfm-text-#{album.color}" }
+                  - if setlist.songs.include?(track[:title])
+                    %td.px-0.py-0{ class: "zfm-text-#{track[:color]}" }
                       &#x2592
                   - else
                     %td.text-black.px-0.py-0
                       &#x2592
               - @setlists.each do |setlist|
                 - unless setlist.songs.empty?
-                  - if setlist.songs.include?(track)
-                    %td.px-0.py-0{ class: "zfm-text-#{album.color}" }
+                  - if setlist.songs.include?(track[:title])
+                    %td.px-0.py-0{ class: "zfm-text-#{track[:color]}" }
                       &#x2588
                   - else
                     %td.px-0.py-0.text-black
                       &#x2588
-.col-lg-8.d-none.d-lg-block
-  .m-3
-    = render partial: "songs_with_dates"
-.d-lg-none
-  = render partial: "spotify"
