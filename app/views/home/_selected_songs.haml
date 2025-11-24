@@ -1,25 +1,15 @@
-- @discography.selected_tracks(@all_songs).in_groups(3, false) do |tracks|
-  .col-lg-4
-    .m-3
+.row.d-none.d-lg-flex
+  - @discography.selected_tracks(@all_songs).in_groups(3, false) do |tracks|
+    .col-4
       %table.table.table-borderless.px-3
         %tbody
           - tracks.each do |track|
-            %tr
-              %td.py-0{ class: "zfm-text-#{track[:color]}"}
-                = track[:title]
-              - if @past_setlists.present?
-                - @past_setlists.each do |setlist|
-                  - if setlist.songs.include?(track[:title])
-                    %td.px-0.py-0{ class: "zfm-text-#{track[:color]}" }
-                      &#x2592
-                  - else
-                    %td.text-black.px-0.py-0
-                      &#x2592
-              - @setlists.each do |setlist|
-                - unless setlist.songs.empty?
-                  - if setlist.songs.include?(track[:title])
-                    %td.px-0.py-0{ class: "zfm-text-#{track[:color]}" }
-                      &#x2588
-                  - else
-                    %td.px-0.py-0.text-black
-                      &#x2588
+            = render partial: "track", object: track
+
+.row.d-flex.d-lg-none
+  .col-12
+    .m-3
+      %table.table.table-borderless.px-3
+        %tbody
+          - @discography.selected_tracks(@all_songs).each do |track|
+            = render partial: "track", object: track
