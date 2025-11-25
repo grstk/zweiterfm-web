@@ -4,9 +4,11 @@ module Zweiterfm
     attr_reader :songs
 
     def initialize(user)
-      sleep 1
       @client = Setlistfm.new(Rails.application.credentials.setlistfm_api_key)
-      @setlists = parse_response_body(@client.user_attended(user).body)
+      response = Rails.cache.fetch("user_attended_#{user}", expires_in: 1.hour) do
+        @client.user_attended(user)
+      end
+      @setlists = parse_response_body(response.body)
       @songs = @setlists.map(&:songs).flatten.uniq
     end
 

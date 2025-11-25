@@ -14,14 +14,13 @@
       2025 Setlists
     - else
       Setlists
-
   #collapseSetlists.collapse
     = render partial: "legend", locals: { show_not_yet_seen: @past_setlists.present? }
     .row
       = render @setlists
 .zfm-divider
 
--if @past_setlists.present?
+- if @past_setlists.present?
   .container
     %button.btn.btn-dark.my-2{"aria-controls" => "collapsePastSetlists", "aria-expanded" => "false", "data-bs-target" => "#collapsePastSetlists", "data-bs-toggle" => "collapse", :type => "button"}
       Past Setlists
@@ -46,4 +45,3 @@
     = render partial: "playlist"
     = render partial: "spotify"
 .zfm-divider
-

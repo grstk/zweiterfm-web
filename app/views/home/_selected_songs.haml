@@ -8,8 +8,7 @@
 
 .row.d-flex.d-lg-none
   .col-12
-    .m-3
-      %table.table.table-borderless.px-3
-        %tbody
-          - @discography.selected_tracks(@all_songs).each do |track|
-            = render partial: "track", object: track
+    %table.table.table-borderless.px-3
+      %tbody
+        - @discography.selected_tracks(@all_songs).each do |track|
+          = render partial: "track", object: track

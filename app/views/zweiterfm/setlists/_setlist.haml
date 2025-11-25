@@ -2,11 +2,11 @@
   .card.my-3
     .card-header
       .h5.card-title
-        = setlist.date
+        = setlist.time.strftime("%Y-%m-%d")
       .h6.card-subtitle.mb-2.text-body-secondary
         = setlist.city
     .card-body
-      %ol.zfm-list
+      %ol.zfm-list.ps-5.pt-2
         - setlist.songs.each do |song|
           %li{ class: song_classes(song) }
             = song
